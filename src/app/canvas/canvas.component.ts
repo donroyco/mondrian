@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { COLORS, DIMENSIONS } from './canvas.constants';
 import { Square } from './canvas.types';
@@ -7,7 +7,7 @@ import { Square } from './canvas.types';
   selector: 'app-canvas-mondrian',
   templateUrl: './canvas.component.html'
 })
-export class CanvasComponent implements AfterViewInit {
+export class CanvasComponent implements OnInit {
 
   @ViewChild('mondrianCanvas', { static: true }) mondrianCanvas: ElementRef;
   context: CanvasRenderingContext2D;
@@ -25,7 +25,7 @@ export class CanvasComponent implements AfterViewInit {
     height: this.size
   }];
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.context = (<HTMLCanvasElement>this.mondrianCanvas.nativeElement).getContext('2d');
     this.context.canvas.width = this.size * this.dpr;
     this.context.canvas.height = this.size * this.dpr;
