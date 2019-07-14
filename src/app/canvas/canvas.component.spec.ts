@@ -19,7 +19,7 @@ describe('CanvasComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create CanvasComponent', () => {
     expect(component).toBeTruthy();
   });
 });

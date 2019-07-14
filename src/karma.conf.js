@@ -7,6 +7,7 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
+      require('karma-junit-reporter'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
@@ -14,6 +15,11 @@ module.exports = function (config) {
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
+    junitReporter: {
+      outputDir: '../coverage',
+      outputFile: 'junit.xml',
+      useBrowserName: false
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../coverage'),
