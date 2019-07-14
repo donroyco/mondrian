@@ -1,27 +1,20 @@
 # Mondrian
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+Mondrian - Abstract art in your browser.
 
-## Development server
+## Piet Mondrian
+Pieter Cornelis Mondriaan, after 1906 Piet Mondrian (7 March 1872 – 1 February 1944), was a Dutch painter and theoretician who is regarded as one of the greatest artists of the 20th century. He is known for being one of the pioneers of 20th century abstract art, as he changed his artistic direction from figurative painting to an increasingly abstract style, until he reached a point where his artistic vocabulary was reduced to simple geometric elements.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Source: [Wikipedia][1]
 
-## Code scaffolding
+## Technical details
+- Angular
+- TypeScript
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Credits
+Inspired by [Generative Artistry][2] and [Tim Holman][3].
 
-## Build
+[1]: https://en.wikipedia.org/wiki/Piet_Mondrian
+[2]: https://generativeartistry.com
+[3]: https://github.com/tholman
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
