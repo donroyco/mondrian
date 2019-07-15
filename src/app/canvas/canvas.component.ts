@@ -52,7 +52,7 @@ export class CanvasComponent implements OnInit {
       for (const color in this.colors) {
         this.squares[Math.floor(Math.random() * this.squares.length)].color = this.colors[color];
       }
-      if (square.color) {
+      if (square.color && Math.random() > 0.5) {
         this.context.fillStyle = square.color;
       } else {
         this.context.fillStyle = this.white;
