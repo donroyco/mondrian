@@ -35,6 +35,11 @@ export class CanvasComponent implements OnInit {
     this.drawCanvas();
   }
 
+  generateCanvas(): void {
+    this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+    this.drawCanvas();
+  }
+
   private drawCanvas(): void {
 
     this.squares = [{
@@ -131,10 +136,5 @@ export class CanvasComponent implements OnInit {
 
     this.squares.push(squareA);
     this.squares.push(squareB);
-  }
-
-  private generateCanvas(): void {
-    this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
-    this.drawCanvas();
   }
 }

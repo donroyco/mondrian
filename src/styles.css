@@ -48,6 +48,10 @@ canvas {
 }
 
 .btn:hover {
+  background-color: #ddd;
+}
+
+.btn:active {
   top: 2px;
   box-shadow: 0 2px #aaa;
 }
