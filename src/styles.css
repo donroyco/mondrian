@@ -33,3 +33,26 @@ canvas {
   background-size: cover;
   background-position: center center;
 }
+
+.btn {
+  font-size: .875em;
+  position: relative;
+  background-color: #eee;
+  color: #000;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 5px;
+  box-shadow: 0 4px #aaa;
+  transition: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  top: 2px;
+  box-shadow: 0 2px #aaa;
+}
+
+.btn:hover,
+.btn:focus {
+  outline: none;
+}

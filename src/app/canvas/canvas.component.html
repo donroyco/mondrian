@@ -1,5 +1,8 @@
 <div class="container">
-  <canvas #mondrianCanvas></canvas>
+  <canvas #mondrianCanvas id="mondrianCanvas"></canvas>
 
-  <p class="description">Inspired by <a href="https://generativeartistry.com">Generative Artistry</a>. <a href="https://github.com/donroyco/mondrian">GitHub project</a>.</p>
+  <button (click)="generateCanvas()" type="button" class="btn">Regenerate</button>
+
+  <p class="description">Inspired by <a href="https://generativeartistry.com">Generative Artistry</a>.
+    <a href="https://github.com/donroyco/mondrian">GitHub project</a>.</p>
 </div>

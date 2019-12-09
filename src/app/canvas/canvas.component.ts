@@ -8,8 +8,8 @@ import { Square } from './canvas.types';
   templateUrl: './canvas.component.html'
 })
 export class CanvasComponent implements OnInit {
-
   @ViewChild('mondrianCanvas', { static: true }) mondrianCanvas: ElementRef;
+
   context: CanvasRenderingContext2D;
   dpr = window.devicePixelRatio;
   lineWidth = DIMENSIONS.lineWidth;
@@ -36,6 +36,14 @@ export class CanvasComponent implements OnInit {
   }
 
   private drawCanvas(): void {
+
+    this.squares = [{
+      x: 0,
+      y: 0,
+      width: this.size,
+      height: this.size
+    }];
+
     for (let i = 0; i < this.size; i += this.step) {
       this.splitSquaresWith({ x: i });
       this.splitSquaresWith({ y: i });
@@ -49,14 +57,17 @@ export class CanvasComponent implements OnInit {
         square.width,
         square.height
       );
+
       for (const color in this.colors) {
         this.squares[Math.floor(Math.random() * this.squares.length)].color = this.colors[color];
       }
+
       if (square.color && Math.random() > 0.5) {
         this.context.fillStyle = square.color;
       } else {
         this.context.fillStyle = this.white;
       }
+
       this.context.fill();
       this.context.stroke();
     }
@@ -120,5 +131,10 @@ export class CanvasComponent implements OnInit {
 
     this.squares.push(squareA);
     this.squares.push(squareB);
+  }
+
+  private generateCanvas(): void {
+    this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+    this.drawCanvas();
   }
 }
