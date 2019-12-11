@@ -5,10 +5,9 @@
     <button (click)="generateCanvas()"
       type="button"
       class="btn">Regenerate</button>
-    <a (click)="generateDownloadCanvas(downloadLink)"
-       #downloadLink
-       [href]="canvasUrl"
+    <a (click)="generateDownloadCanvas()"
        [download]="downloadUrlName"
+       id="btn-download"
        class="btn">Download</a>
   </div>
 

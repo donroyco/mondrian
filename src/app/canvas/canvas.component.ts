@@ -42,9 +42,12 @@ export class CanvasComponent implements OnInit {
     this.drawCanvas();
   }
 
-  generateDownloadCanvas(element): void {
+  generateDownloadCanvas(): void {
     const canvasElement = document.getElementById('mondrianCanvas') as HTMLCanvasElement;
+    const downloadButton = document.getElementById('btn-download');
+
     this.canvasUrl = canvasElement.toDataURL('image/png', '100');
+    downloadButton.setAttribute('href', this.canvasUrl);
   }
 
   private drawCanvas(): void {
