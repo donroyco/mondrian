@@ -50,6 +50,7 @@ canvas {
   transition: none;
   cursor: pointer;
   text-decoration: none;
+  touch-action: manipulation;
 }
 
 .btn:first-child {
