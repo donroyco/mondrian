@@ -10,6 +10,7 @@ import { Square } from './canvas.types';
 export class CanvasComponent implements OnInit {
   @ViewChild('mondrianCanvas', { static: true }) mondrianCanvas: ElementRef;
 
+  canvasUrl: string;
   context: CanvasRenderingContext2D;
   dpr = window.devicePixelRatio;
   lineWidth = DIMENSIONS.lineWidth;
@@ -38,6 +39,13 @@ export class CanvasComponent implements OnInit {
   generateCanvas(): void {
     this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
     this.drawCanvas();
+  }
+
+  generateDownloadCanvas(element): void {
+    const canvasElement = document.getElementById('mondrianCanvas') as HTMLCanvasElement;
+    const canvasImage = canvasElement.toDataURL('image/png', '100');
+
+    this.canvasUrl = canvasImage;
   }
 
   private drawCanvas(): void {

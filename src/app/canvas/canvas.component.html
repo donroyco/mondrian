@@ -1,7 +1,10 @@
 <div class="container">
   <canvas #mondrianCanvas id="mondrianCanvas"></canvas>
 
-  <button (click)="generateCanvas()" type="button" class="btn">Regenerate</button>
+  <div class="btn-container">
+    <button (click)="generateCanvas()" type="button" class="btn">Regenerate</button>
+    <a [href]="canvasUrl" (click)="generateDownloadCanvas(downloadLink)" #downloadLink download="canvas-image.png" class="btn">Download</a>
+  </div>
 
   <p class="description">Inspired by <a href="https://generativeartistry.com">Generative Artistry</a>.
     <a href="https://github.com/donroyco/mondrian">GitHub project</a>.</p>
