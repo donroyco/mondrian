@@ -8,3 +8,8 @@ export const DIMENSIONS = {
   lineWidth: 8,
   step: 7
 };
+
+export const DOWNLOAD_URL = {
+  name: 'mondrian',
+  filetype: 'png'
+}

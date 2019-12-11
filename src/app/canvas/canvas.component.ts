@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
-import { COLORS, DIMENSIONS } from './canvas.constants';
+import { COLORS, DIMENSIONS, DOWNLOAD_URL } from './canvas.constants';
 import { Square } from './canvas.types';
 
 @Component({
@@ -12,6 +12,7 @@ export class CanvasComponent implements OnInit {
 
   canvasUrl: string;
   context: CanvasRenderingContext2D;
+  downloadUrlName: string;
   dpr = window.devicePixelRatio;
   lineWidth = DIMENSIONS.lineWidth;
   size = DIMENSIONS.canvasSize;
@@ -43,12 +44,11 @@ export class CanvasComponent implements OnInit {
 
   generateDownloadCanvas(element): void {
     const canvasElement = document.getElementById('mondrianCanvas') as HTMLCanvasElement;
-    const canvasImage = canvasElement.toDataURL('image/png', '100');
-
-    this.canvasUrl = canvasImage;
+    this.canvasUrl = canvasElement.toDataURL('image/png', '100');
   }
 
   private drawCanvas(): void {
+    this.downloadUrlName = this.generateDownloadUrlName();
 
     this.squares = [{
       x: 0,
@@ -144,5 +144,10 @@ export class CanvasComponent implements OnInit {
 
     this.squares.push(squareA);
     this.squares.push(squareB);
+  }
+
+  private generateDownloadUrlName(): string {
+    const date = Date.now();
+    return `${date}-${DOWNLOAD_URL.name}.${DOWNLOAD_URL.filetype}`;
   }
 }
