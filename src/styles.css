@@ -7,6 +7,10 @@ body {
   height: 100%;
 }
 
+body {
+  font-size: 1rem;
+}
+
 .container {
   display: flex;
   flex-flow: column;
@@ -19,7 +23,6 @@ body {
 .description {
   position: absolute;
   bottom: 1em;
-  font-size: .875em;
 }
 
 .description a {
@@ -40,7 +43,6 @@ canvas {
 }
 
 .btn {
-  font-size: .875em;
   position: relative;
   background-color: #eee;
   color: #000;
